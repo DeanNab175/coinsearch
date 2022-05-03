@@ -34,4 +34,27 @@ function removeAllChildNodes(parent) {
     }
 }
 
-export {getDate, convertToInternationalCurrencySystem, removeAllChildNodes}
+// CHECK IF IMAGE EXISTS
+function checkIfImageExists(url, callback) {
+    const img = new Image();
+    img.src = url;
+    
+    if (img.complete) {
+      callback(true);
+    } else {
+      img.onload = () => {
+        callback(true);
+      };
+      
+      img.onerror = () => {
+        callback(false);
+      };
+    }
+}
+
+export {
+    getDate,
+    convertToInternationalCurrencySystem,
+    removeAllChildNodes,
+    checkIfImageExists
+}

@@ -14,7 +14,7 @@ body {
     border-radius: 1rem;
     background-color: #fff;
     display: grid;
-    grid-template-columns: .15fr 1fr;
+    grid-template-columns: .25fr 1fr;
     grid-template-rows: 85vh;
     overflow: hidden;
     margin-top: 3rem;
@@ -71,6 +71,7 @@ nav {
         display: inline-block;
         font-size: 0.9rem;
         line-height: 1;
+        transition: all .2s ease-in-out;
 
         &.active {
             font-weight: 600;
@@ -87,7 +88,7 @@ nav {
 }
 
 .header {
-    font-size: .8rem;
+    font-size: .6rem;
     font-weight: 600;
     line-height: 1;
 }
@@ -97,8 +98,25 @@ nav {
     font-weight: 300;
     line-height: 1;
 
-    .name span {
-        display: block;
+    .name {
+        display: flex;
+        align-items: center;
+
+        img {
+            margin-right: .5rem;
+        }
+
+        span {
+            display: block;
+
+            &:first-child {
+                text-transform: capitalize;
+            }
+
+            &:last-child {
+                font-size: .5rem;
+            }
+        }
     }
 
     .socket {

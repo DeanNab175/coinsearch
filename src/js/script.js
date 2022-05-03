@@ -1,29 +1,47 @@
 import { removeAllChildNodes } from "./modules/utilities"
-import renderExchanges from "./modules/exchanges"
+import getCoins from "./modules/getCoins"
+import { renderExchanges } from "./modules/exchanges"
 import renderMarkets from "./modules/markets"
 
 const page = document.getElementById("page")
 const exchangeBtn = document.getElementById("exchange-link")
 const marketsBtn = document.getElementById("markets-link")
 
-renderExchanges('https://api.coincap.io/v2/exchanges')
-// renderMarkets('https://api.coincap.io/v2/markets')
+
+// Render Exhanges
+getCoins('https://api.coincap.io/v2/exchanges').then(coins => {
+    renderExchanges(coins.data)
+}).catch(err => {
+    console.log(err)
+})
 
 
 exchangeBtn.addEventListener('click', (e) => {
     e.preventDefault
+
     exchangeBtn.classList.add('active')
     marketsBtn.classList.remove('active')
     removeAllChildNodes(page)
-    renderExchanges('https://api.coincap.io/v2/exchanges')
-    // console.log("exchangeBtn clicked")
+
+    // Render Exhanges
+    getCoins('https://api.coincap.io/v2/exchanges').then(coins => {
+        renderExchanges(coins.data)
+    }).catch(err => {
+        console.log(err)
+    })
 })
 
 marketsBtn.addEventListener('click', (e) => {
     e.preventDefault
+
     marketsBtn.classList.add('active')
     exchangeBtn.classList.remove('active')
     removeAllChildNodes(page)
-    renderMarkets('https://api.coincap.io/v2/markets')
-    // console.log("marketsBtn clicked");
+
+    // Render Markets
+    getCoins('https://api.coincap.io/v2/markets').then((coins) => {
+        renderMarkets(coins.data)
+    }).catch((err) => {
+        console.log(err);
+    })
 })
