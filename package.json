@@ -1,7 +1,7 @@
 {
-  "name": "coincap",
+  "name": "coinsearch",
   "version": "1.0.0",
-  "description": "Coincap is a cryptocurrency app built with JavaScript",
+  "description": "Coinsearch is a cryptocurrency app built with JavaScript and coincap API",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp build",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeanNab175/Coincap.git"
+    "url": "git+https://github.com/DeanNab175/coinsearch.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DeanNab175/Coincap/issues"
+    "url": "https://github.com/DeanNab175/coinsearch/issues"
   },
-  "homepage": "https://github.com/DeanNab175/Coincap#readme",
+  "homepage": "https://github.com/DeanNab175/coinsearch#readme",
   "devDependencies": {
     "@babel/core": "^7.15.5",
     "@babel/preset-env": "^7.15.6",

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/styles.min.css?cache_bust=1651574248253" />
+
+    <title>Coincap</title>
+  </head>
+  <body>
+    <div class="page-wrap">
+      
+
+      <section class="dashboard" id="dashboard">
+        <header class="menu">
+          <h1>Coincap</h1>
+          <nav>
+            <ul>
+              <li><a href="#" id="exchange-link" class="active">Exchanges</a></li>
+              <li><a href="#" id="markets-link">Markets</a></li>
+            </ul>
+          </nav>
+          <p>&copy; 2022. Created by SN</p>
+        </header>
+        <main>
+          <div class="page" id="page"></div>
+        </main>
+      </section>
+    </div>
+
+    <template data-exchange-header-template>
+      <header class="header exchange-header">
+        <div class="rank">Rank</div>
+        <div class="name">Name</div>
+        <div class="percent-total-volume">Total volume</div>
+        <div class="volume-usd">Volume</div>
+        <div class="trading-pairs">Trading pairs</div>
+        <div class="updated">Updated</div>
+        <div class="socket">Socket</div>
+      </header>
+    </template>
+
+    <template data-exchange-template>
+      <div class="row" data-row>
+        <div class="rank" data-rank></div>
+        <div class="name" data-name></div>
+        <div class="percent-total-volume" data-percent-total-volume></div>
+        <div class="volume-usd" data-volume-usd></div>
+        <div class="trading-pairs" data-trading-pairs></div>
+        <div class="updated" data-updated></div>
+        <div class="socket" data-socket></div>
+      </div>
+    </template>
+
+    <template data-markets-header-template>
+      <header class="header markets-header">
+        <div class="rank">Rank</div>
+        <div class="name">Name</div>
+        <!-- <div class="price-quote">Price quote</div> -->
+        <div class="price-usd">Price</div>
+        <div class="volume-usd">Volume(24hr)</div>
+        <div class="percent-exchange-volume">Exchange volume</div>
+        <div class="trades-count">Trades count</div>
+      </header>
+    </template>
+
+    <template data-markets-template>
+      <div class="row" data-row>
+        <div class="rank" data-rank></div>
+        <div class="name" data-name></div>
+        <!-- <div class="price-quote" data-price-quote></div> -->
+        <div class="price-usd" data-price-usd></div>
+        <div class="volume-usd" data-volume-usd></div>
+        <div class="percent-exchange-volume" data-percent-exchange-volume></div>
+        <div class="trades-count" data-trades-count></div>
+      </div>
+    </template>
+
+    <script src="./js/script.min.js?cache_bust=1651574248253"></script>
+  </body>
+</html>
